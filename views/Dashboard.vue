@@ -66,10 +66,10 @@
           <div id="majimbo">
            <Majimbo></Majimbo>
           </div>
-          <div id="majimbo">
+          <div id="sectors">
            <Sectors></Sectors>
           </div>
-          <div id="majimbo">
+          <div id="pongezi">
            <Pongezi></Pongezi>
           </div>
         </main>
