@@ -23,32 +23,33 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="">
-                  <span data-feather="users"></span>
+                <a class="nav-link"
+                   v-b-toggle href="#majimbo" @click.prevent
+                >
                  Majimbo
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link"
+                   v-b-toggle href="#sectors" @click.prevent>
                   <span data-feather="users"></span>
                  Sekta
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="bar-chart-2"></span>
+                <a class="nav-link"
+                   v-b-toggle href="#kosoa" @click.prevent>
                  Malalamiko
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="layers"></span>
-               Maoni
-                </a>
+                <a class="nav-link"
+                   v-b-toggle href="#maoni" @click.prevent>
+                  Maoni</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="layers"></span>
+                <a class="nav-link"
+                   v-b-toggle href="#pongezi" @click.prevent>
                Pongezi
                 </a>
               </li>
@@ -56,22 +57,25 @@
           </div>
         </nav>
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
-          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-            <h1 class="h2">Dashboard</h1>
-          </div>
+<!--          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">-->
+<!--            <h1 class="h2">Dashboard</h1>-->
+<!--          </div>-->
 
-          <div id="#aina">
-<!--            <AinazaMaoni></AinazaMaoni>-->
-          </div>
-          <div id="majimbo">
-           <Majimbo></Majimbo>
-          </div>
-          <div id="sectors">
-           <Sectors></Sectors>
-          </div>
-          <div id="pongezi">
-           <Pongezi></Pongezi>
-          </div>
+          <b-collapse id="pongezi">
+      <Pongezi></Pongezi>
+          </b-collapse>
+          <b-collapse id="kosoa">
+      <Kosoa></Kosoa>
+          </b-collapse>
+          <b-collapse id="maoni">
+            <Maoni></Maoni>
+          </b-collapse>
+          <b-collapse id="sectors">
+      <Sectors></Sectors>
+          </b-collapse>
+          <b-collapse id="majimbo">
+      <Majimbo></Majimbo>
+          </b-collapse>
         </main>
 
 
@@ -83,14 +87,18 @@
 <script>
 import AinazaMaoni from "./AinazaMaoni.vue";
 import Majimbo from "./Majimbo.vue";
+import Kosoa from "./Kosoa.vue";
 import Sectors from "./Sectors.vue";
+import Maoni from "./Maoni.vue";
 import Pongezi from "./Pongezi.vue";
 export default {
   components:{
     AinazaMaoni,
     Majimbo,
     Sectors,
-    Pongezi
+    Pongezi,
+    Kosoa,
+    Maoni
 
   },
   name: "dashboard"

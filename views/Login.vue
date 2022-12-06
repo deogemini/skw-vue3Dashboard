@@ -35,8 +35,9 @@ export default {
     console.log(this.form);
     axios.post(apiUrl,this.form)
         .then((res)=>{
-          console.log(res.status)
+          console.log(res.data)
           console.log(res.data.token)
+          console.log(res.data.region)
           this.$router.push({name: 'Dashboard'})
         })
         .catch((error) =>{
