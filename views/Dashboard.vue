@@ -57,9 +57,12 @@
           </div>
         </nav>
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
-<!--          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">-->
-<!--            <h1 class="h2">Dashboard</h1>-->
-<!--          </div>-->
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <BarChart></BarChart>
+
+
+          </div>
+
 
           <b-collapse id="pongezi">
       <Pongezi></Pongezi>
@@ -91,6 +94,7 @@ import Kosoa from "./Kosoa.vue";
 import Sectors from "./Sectors.vue";
 import Maoni from "./Maoni.vue";
 import Pongezi from "./Pongezi.vue";
+import BarChart from "./BarChart.vue";
 export default {
   components:{
     AinazaMaoni,
@@ -98,7 +102,8 @@ export default {
     Sectors,
     Pongezi,
     Kosoa,
-    Maoni
+    Maoni,
+    BarChart
 
   },
   name: "dashboard"

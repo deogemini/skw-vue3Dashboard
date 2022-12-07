@@ -23,9 +23,15 @@
 </template>
 
 <script>
-import axios from "axios";
+import axios, {AxiosHeaders} from "axios";
 
 let mkoa = 'Songwe';
+
+const configuration = {
+  headers:{
+    Authorization: `Token 7b38a209b2c74ee86b6656a2596a8d53e53b8f18`
+  }
+};
 
 export default {
   name: "Majimbo",
@@ -35,20 +41,18 @@ export default {
     }
   },
   methods: {
-    getMajimbokwenyeMkoa(){
-      axios.get('http://45.56.115.113:8001/api/provincies/Mbeya')
-          .then(response => {
-            this.majimbo = response.data.majimbo
-            console.log(response.data);
-            console.log(response.data.majimbo);
-          })
-          .catch(function (error) {
-            console.log(error);
-          })
-          .then(function () {
-            // always executed
-          });
-
+  async  getMajimbokwenyeMkoa(){
+    const config = {
+      method: 'get',
+      url: 'http://45.56.115.113:8001/api/provincies',
+      headers:
+          {
+            Authorization: `Token `+ localStorage.getItem('token')
+          }
+    }
+    let response = await axios(config)
+          console.log(response.data);
+          this.majimbo = response.data.majimbo
     }
   },
   mounted() {

@@ -27,7 +27,10 @@ export default {
       form: {
         username: '',
         password:''
-      }
+      },
+      token: null,
+      region: null,
+
     }
   },
   methods: {
@@ -36,12 +39,13 @@ export default {
     axios.post(apiUrl,this.form)
         .then((res)=>{
           console.log(res.data)
-          console.log(res.data.token)
-          console.log(res.data.region)
+          this.token = res.data.token
+          localStorage.setItem('token', this.token )
           this.$router.push({name: 'Dashboard'})
+          localStorage.setItem('username', this.form.username)
+
         })
         .catch((error) =>{
-          console.log(error.response.status);
           // error.response.status Check status code
         }).finally(() => {
       //Perform action in always

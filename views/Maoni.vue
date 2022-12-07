@@ -34,10 +34,9 @@ export default {
   },
   methods: {
     getMaoni(){
-      axios.get('http://45.56.115.113:8001/api/getfeedback/Sudi/')
+      axios.get('http://45.56.115.113:8001/api/getfeedback/'+localStorage.getItem('username'))
           .then(response => {
             this.maoni = response.data
-            console.log(response.data);
           })
           .catch(function (error) {
             console.log(error);

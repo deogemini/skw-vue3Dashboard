@@ -36,9 +36,7 @@ export default {
     getSectors(){
       axios.get('http://45.56.115.113:8001/api/sectors/')
           .then(response => {
-            this.sectors = response.data.regions
-            console.log(response.data);
-            console.log(response.data.regions);
+            this.sectors = response.data.sectors
           })
           .catch(function (error) {
             console.log(error);
