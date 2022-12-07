@@ -1,14 +1,44 @@
 <template>
-  <Bar
-      id="my-chart-id"
-      :options="chartOptions"
-      :data="chartData"
-  />
+  <b-container>
+    <b-row>
+      <b-col>
+        <Bar
+            id="my-chart-id"
+            :options="chartOptions"
+            :data="chartData"/>
+
+      </b-col>
+      <b-col>
+        <Bar
+            id="my-chart-id"
+            :options="chartOptions"
+            :data="chartData"/>
+      </b-col>
+    </b-row>
+
+    <b-row>
+      <b-col>
+        <Bar
+            id="my-chart-id"
+            :options="chartOptions"
+            :data="chartData"/>
+      </b-col>
+      <b-col>
+        <Bar
+            id="my-chart-id"
+            :options="chartOptions"
+            :data="chartData"/>
+      </b-col>
+    </b-row>
+  </b-container>
+
+
 </template>
 
 <script>
 import { Bar, Pie } from 'vue-chartjs'
 import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js'
+import axios from "axios";
 
 ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
 
@@ -23,18 +53,31 @@ export default {
       },
       chartOptions: {
         responsive: true
-      }
+      },
+      jimbos: [],
+      sector: [],
+      categories: []
     }
+  },
+
+  methods: {
+    async  getReport(){
+      const config = {
+        method: 'get',
+        url: 'http://45.56.115.113:8001/api/reports',
+        headers:
+            {
+              Authorization: `Token `+ localStorage.getItem('token')
+            }
+      }
+      let response = await axios(config)
+       console.log(response)
+    }
+  },
+  mounted() {
+    this.getReport();
   }
 }
-
-//is needed to do a get request to this api
-// so after regional commissioner has login we have to capture his token and pass through headers to call this api bellow
-//how to pass headers
-//Authorization = Token "token hear"
-// http://45.56.115.113:8001/api/reports
-// the task is to create graph based on this api response
-
 </script>
 
 <style scoped>
