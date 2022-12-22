@@ -55,7 +55,7 @@ export default {
         responsive: true
       },
     }
-  }
+  },
   methods: {
     async  getReport(){
       const config = {
