@@ -42,7 +42,7 @@
                 </div>
                 <div class="col-sm-12 col-md-6 d-none d-md-block">
                     <div class="hero-image">
-                        <img src="views/assets/img/people.jpg" alt="Hero Image">
+                        <img src="/views/assets/img/people.jpg" alt="Hero Image">
                     </div>
                 </div>
             </div>
@@ -54,7 +54,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-6">
                     <div class="about-img">
-                        <img src="views/assets/img/about.jpg" alt="Image">
+                        <img src="/views/assets/img/about.jpg" alt="Image">
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -285,7 +285,7 @@
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.0s">
                     <div class="team-item">
                         <div class="team-img">
-                            <img src="views/assets/img/deog.jpg" alt="Image">
+                            <img src="/views/assets/img/deog.jpg" alt="Image">
                         </div>
                         <div class="team-text">
                             <h2>Deogratias Gemini Mushi</h2>
@@ -305,7 +305,7 @@
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.2s">
                     <div class="team-item">
                         <div class="team-img">
-                            <img src="views/assets/img/laurent.jpg" alt="Image">
+                            <img src="/views/assets/img/laurent.jpg" alt="Image">
                         </div>
                         <div class="team-text">
                             <h2>Laurent Deus</h2>
