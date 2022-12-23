@@ -18,7 +18,6 @@
 
 <script>
 import axios from 'axios';
-import router from "../router/index.js";
 const apiUrl = "http://45.56.115.113:8001/api-token-auth/";
 export default {
   name: "Login",
@@ -38,12 +37,10 @@ export default {
     console.log(this.form);
     axios.post(apiUrl,this.form)
         .then((res)=>{
-          console.log(res.data)
           this.token = res.data.token
           localStorage.setItem('token', this.token )
           this.$router.push({name: 'Dashboard'})
           localStorage.setItem('username', this.form.username)
-
         })
         .catch((error) =>{
           // error.response.status Check status code

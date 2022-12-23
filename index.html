@@ -1,16 +1,158 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
   <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+      <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
       <title>SKW App</title>
+
+
+
+      <!-- Google Font -->
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+      <!-- CSS Libraries -->
+      <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+      <link href="/lib/animate/animate.min.css" rel="stylesheet">
+      <link href="/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+      <link href="/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+
   </head>
-  <body>
+  <body data-spy="scroll" data-target=".navbar" data-offset="51">
     <div id="app"></div>
+
+
+
+
     <script type="module" src="/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js"></script>
+
+
+<!-- JavaScript Libraries -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+<script src="/lib/easing/easing.min.js"></script>
+<script src="/lib/wow/wow.min.js"></script>
+<script src="/lib/waypoints/waypoints.min.js"></script>
+<script src="/lib/typed/typed.min.js"></script>
+<script src="/lib/owlcarousel/owl.carousel.min.js"></script>
+<script src="/lib/isotope/isotope.pkgd.min.js"></script>
+<script src="/lib/lightbox/js/lightbox.min.js"></script>
+
+<script>
+    (function ($) {
+        "use strict";
+
+        loader
+        var loader = function () {
+            setTimeout(function () {
+                if ($('#loader').length > 0) {
+                    $('#loader').removeClass('show');
+                }
+            }, 1);
+        };
+        loader();
+
+
+        // Initiate the wowjs
+        new WOW().init();
+
+
+        // Back to top button
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 200) {
+                $('.back-to-top').fadeIn('slow');
+            } else {
+                $('.back-to-top').fadeOut('slow');
+            }
+        });
+        $('.back-to-top').click(function () {
+            $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
+            return false;
+        });
+
+
+        // Sticky Navbar
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 0) {
+                $('.navbar').addClass('nav-sticky');
+            } else {
+                $('.navbar').removeClass('nav-sticky');
+            }
+        });
+
+
+        // Smooth scrolling on the navbar links
+        $(".navbar-nav a").on('click', function (event) {
+            if (this.hash !== "") {
+                event.preventDefault();
+
+                $('html, body').animate({
+                    scrollTop: $(this.hash).offset().top - 45
+                }, 1500, 'easeInOutExpo');
+
+                if ($(this).parents('.navbar-nav').length) {
+                    $('.navbar-nav .active').removeClass('active');
+                    $(this).closest('a').addClass('active');
+                }
+            }
+        });
+
+
+        // Typed Initiate
+        if ($('.hero .hero-text h2').length == 1) {
+            var typed_strings = $('.hero .hero-text .typed-text').text();
+            var typed = new Typed('.hero .hero-text h2', {
+                strings: typed_strings.split(', '),
+                typeSpeed: 100,
+                backSpeed: 20,
+                smartBackspace: false,
+                loop: true
+            });
+        }
+
+
+        // Skills
+        $('.skills').waypoint(function () {
+            $('.progress .progress-bar').each(function () {
+                $(this).css("width", $(this).attr("aria-valuenow") + '%');
+            });
+        }, {offset: '80%'});
+
+
+        // Testimonials carousel
+        $(".testimonials-carousel").owlCarousel({
+            center: true,
+            autoplay: true,
+            dots: true,
+            loop: true,
+            responsive: {
+                0:{
+                    items:1
+                }
+            }
+        });
+
+
+
+        // Portfolio filter
+        var portfolioIsotope = $('.portfolio-container').isotope({
+            itemSelector: '.portfolio-item',
+            layoutMode: 'fitRows'
+        });
+
+        $('#portfolio-filter li').on('click', function () {
+            $("#portfolio-filter li").removeClass('filter-active');
+            $(this).addClass('filter-active');
+            portfolioIsotope.isotope({filter: $(this).data('filter')});
+        });
+
+    })(jQuery);
+
+
+</script>
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
   </body>

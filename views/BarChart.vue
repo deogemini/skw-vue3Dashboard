@@ -48,18 +48,14 @@ export default {
   data() {
     return {
       chartData: {
-        labels: [ 'January', 'February', 'March' ],
-        datasets: [ { data: [ 40, 20, 12] } ]
+        labels: ['January', 'February', 'March'],
+        datasets: [{data: [40, 20, 12]}]
       },
       chartOptions: {
         responsive: true
       },
-      jimbos: [],
-      sector: [],
-      categories: []
     }
   },
-
   methods: {
     async  getReport(){
       const config = {
@@ -71,7 +67,6 @@ export default {
             }
       }
       let response = await axios(config)
-       console.log(response)
     }
   },
   mounted() {
