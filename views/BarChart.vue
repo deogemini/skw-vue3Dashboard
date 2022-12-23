@@ -67,8 +67,6 @@ export default {
             }
       }
       let response = await axios(config)
-      jimbo.push(response)
-       console.log(jimbo)
     }
   },
   mounted() {
