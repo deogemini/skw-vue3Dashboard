@@ -7,7 +7,7 @@
       <input class="form-control form-control-dark w-100" type="text" placeholder="Tafuta" aria-label="Search">
       <ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap">
-          <a class="nav-link" href="/index.html">Kutoka</a>
+          <router-link to="/login"> Kutoka</router-link>
         </li>
       </ul>
     </nav>
