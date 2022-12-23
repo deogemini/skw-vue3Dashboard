@@ -648,7 +648,7 @@ export default {
         padding: 120px 0 0 0;
         overflow: hidden;
         /* background: linear-gradient(#B9B632, #B9B632), url(../img/hero-bg.jpg); */
-        background: linear-gradient(#b9b73209, #b9b73209), url(views/assets/img/hero-bg.jpg);
+        background: linear-gradient(#b9b73209, #b9b73209), url(/views/assets/img/hero-bg.jpg);
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
