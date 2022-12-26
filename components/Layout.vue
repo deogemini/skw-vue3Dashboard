@@ -16,21 +16,16 @@
         <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar ">
           <div class="sidebar-sticky pt-3">
             <ul class="nav flex-column">
-              <li class="nav-item">
-                <a class="nav-link active" href="#">
-                  <span data-feather="home"></span>
-                  Menu Kuu <span class="sr-only">(current)</span>
-                </a>
-              </li>
-              <li class="nav-item">
+              <li class="nav-link nav-item">
                 <!-- <a class="nav-link"
                    v-b-toggle href="#majimbo" @click.prevent
                 >
                  Majimbo
                 </a> -->
-                <router-link :to="{ name: 'dash' }" exact>Home</router-link>
+                <router-link :to="{ name: 'dash' }" exact>  <span data-feather="home"></span>
+                  Home <span class="sr-only">(current)</span> </router-link>
               </li>
-              <li class="nav-item">
+              <li class="nav-link nav-item">
                 <!-- <a class="nav-link"
                    v-b-toggle href="#majimbo" @click.prevent
                 >
@@ -38,7 +33,7 @@
                 </a> -->
                 <router-link :to="{ name: 'majimbo' }">Majimbo</router-link>
               </li>
-              <li class="nav-item">
+              <li class="nav-link nav-item">
                 <!-- <a class="nav-link"
                    v-b-toggle href="#sectors" @click.prevent>
                   <span data-feather="users"></span>
@@ -47,20 +42,28 @@
                 <router-link :to="{ name: 'sekta' }">Sekta</router-link>
               </li>
              
-              <li class="nav-item">
+              <li class="nav-link nav-item">
                 <!-- <a class="nav-link"
                    v-b-toggle href="#maoni" @click.prevent>
                   Maoni</a> -->
 
                   <router-link :to="{ name: 'maoni' }">Maoni</router-link>
               </li>
-              <li class="nav-item">
+              <li class="nav-link nav-item">
                 <!-- <a class="nav-link"
                    v-b-toggle href="#pongezi" @click.prevent>
                Pongezi
                 </a> -->
 
                 <router-link :to="{ name: 'pongezi' }">Pongezi</router-link>
+              </li>
+              <li class="nav-link nav-item">
+                <!-- <a class="nav-link"
+                   v-b-toggle href="#pongezi" @click.prevent>
+               Pongezi
+                </a> -->
+
+                <router-link :to="{ name: 'kosoa' }">Kukosolewa</router-link>
               </li>
             </ul>
           </div>

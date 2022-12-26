@@ -14,7 +14,7 @@
       </thead>
       <tbody>
       <tr v-for="(oni , index) in maoni" :key="index">
-        <td v-if="oni.category === '3'" v-text="oni.id"> </td>
+        <td v-if="oni.category === '3'" v-text="index"> </td>
         <td v-if="oni.category === '3' " v-text="oni.maoni"></td>
       </tr>
       </tbody>

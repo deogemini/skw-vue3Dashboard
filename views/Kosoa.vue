@@ -13,9 +13,9 @@
       </tr>
       </thead>
       <tbody>
-      <tr v-for="(ponge, index) in makosa" :key="index">
-        <td v-if="ponge.category === '2'" v-text="ponge.id"> </td>
-        <td v-if="ponge.category === '2' " v-text="ponge.maoni"></td>
+      <tr v-for="(makos, index) in makosa" :key="index">
+        <td v-if="makos.category === '2'" v-text="index+1"> </td>
+        <td v-if="makos.category === '2' " v-text="makos.maoni"></td>
       </tr>
       </tbody>
     </table>

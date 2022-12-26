@@ -14,7 +14,7 @@
       </thead>
       <tbody>
       <tr v-for="(majimb, index) in majimbo" :key="index">
-        <td v-text="majimb.id"> </td>
+        <td > {{index+1}}</td>
         <td v-text="majimb.jina_la_jimbo"></td>
       </tr>
       </tbody>

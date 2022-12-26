@@ -14,7 +14,7 @@
       </thead>
       <tbody>
       <tr v-for="(ponge, index) in pongezi" :key="index">
-        <td v-if="ponge.category === '1'" v-text="ponge.id"> </td>
+        <td v-if="ponge.category === '1'" v-text="index+1"> </td>
         <td v-if="ponge.category === '1' " v-text="ponge.maoni"></td>
       </tr>
       </tbody>
