@@ -15,9 +15,56 @@ const routes = [
     {
         path: '/dashboard',
         name: 'Dashboard',
-        component: () => import('../views/Dashboard.vue')
+        component: () => import('../components/Layout.vue'),
 
-    }
+        children: [
+            {
+                path: '',
+                name: 'dash',
+                component: () => import('../views/Dashboard.vue'),
+              },
+            {
+                path: '/kosoa',
+                name: 'kosoa',
+                component: () => import('../views/Kosoa.vue')
+        
+            },
+        
+            {
+                path: '/majimbo',
+                name: 'majimbo',
+                component: () => import('../views/Majimbo.vue')
+        
+            },
+
+            {
+                path: '/sekta',
+                name: 'sekta',
+                component: () => import('../views/Sectors.vue')
+        
+            },
+            // {
+            //     path: '/malalamiko',
+            //     name: 'malalamiko',
+            //     component: () => import('../views/Sectors.vue')
+        
+            // },
+        
+            {
+                path: '/Maoni',
+                name: 'maoni',
+                component: () => import('../views/Maoni.vue')
+        
+            },
+        
+            {
+                path: '/Pongezi',
+                name: 'pongezi',
+                component: () => import('../views/Pongezi.vue')
+        
+            }
+        ]
+    },
 
 ]
 
