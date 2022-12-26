@@ -84,47 +84,45 @@
     <div class="experience" id="experience">
         <div class="container">
             <header class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
-                <p>Experiences</p>
-                <h2>What do people say about us?</h2>
+                <p>SKW HISTORY</p>
+                <h3>How did we get here and where are we going?</h3>
             </header>
             <div class="timeline">
                 <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
                     <div class="timeline-text">
-                        <div class="timeline-date">2019 - 2020</div>
-                        <h2>Web Development</h2>
-                        <h4>Sisi Limited, Sisi creative, WD</h4>
+                        <div class="timeline-date">Feb 2021 - March 2021</div>
+                        <h2>RapidPro Hackathon at Y4C Hub</h2>
+                        <h4>Origin of the Idea and the Solution</h4>
                         <p>
-                            The best in web development producing timely and highly quality products.
-                        </p>
+                            After conceiving and building a prototype in response to the challenge set out by UNICEF, Team was named the third winner of the RapidPro Hackathon. The answer was the initial ideation of SKW.                        </p>
                     </div>
                 </div>
                 <div class="timeline-item right wow slideInRight" data-wow-delay="0.1s">
                     <div class="timeline-text">
-                        <div class="timeline-date">2020 - 2021</div>
-                        <h2>Web Design</h2>
-                        <h4>Sisi Limited, Sisi creative, WS</h4>
+                        <div class="timeline-date"> March - May 2021</div>
+                        <h2>Software Development</h2>
+                        <h4>From Prototype to Software Product</h4>
                         <p>
-                            With existance of covid 19 we where the top most branded company for web design across the country supplying virtual and remote support.
+                            The team was given the chance to demonstrate their capacity to create software that will meet society's needs, and when given the chance, they created an MVP that was best to be released to benefit the local community.
                         </p>
                     </div>
                 </div>
                 <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
                     <div class="timeline-text">
-                        <div class="timeline-date">2021 - 2022</div>
-                        <h2>Graphic Design</h2>
-                        <h4>Sisi Limited, Sisi creative, GD</h4>
+                        <div class="timeline-date"> Jun 2021 - Jul 2022</div>
+                        <h2>Demo and Initial released</h2>
+                        <h4>The Software was presented to the society</h4>
                         <p>
-                            We are experting to producing more and better quality graphics design product that compete in international standards.
-                        </p>
+                            Instead of the Y4C hub, SKW was on the demo stage to be tasted and demonstrated to other interested stakeholders. For the team, it was an amazing occasion.                        </p>
                     </div>
                 </div>
                 <div class="timeline-item right wow slideInRight" data-wow-delay="0.1s">
                     <div class="timeline-text">
-                        <div class="timeline-date">2022 - Current</div>
-                        <h2>Printing Services</h2>
-                        <h4>Sisi Limited, Sisi creative, printing</h4>
+                        <div class="timeline-date"> February 2022 - Current</div>
+                        <h2>Software Product Enhancement</h2>
+                        <h4>Work on the feedbacks for better product</h4>
                         <p>
-                            We are now the leading company in producing the printing services such as printing Flyers, Banners, Calendar, Posters, Reflectors,Product Lebels,T-Shirts & Caps, Mugs, ID Cards, Vinyl Stickers, Promotion Materials.
+                            The SKW team is working hard to make sure that the product is friendly to all users, including citizens and leaders. We hope SKW will serve as a platform that connects citizens and their leaders and promotes greater community development.
                         </p>
                     </div>
                 </div>
