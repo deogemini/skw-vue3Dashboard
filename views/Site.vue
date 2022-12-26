@@ -161,23 +161,23 @@
                             <h2>SKW WEBSITE</h2>
                         </div>
                         <div class="price-prices">
-                            <h2>Included features</h2>
+                            <h3>Get any Info about SKW</h3>
                         </div>
                     </div>
                     <div class="price-body">
                         <div class="price-description">
                             <ul>
-                                <li>Interactive Web content</li>
-                                <li>Responsive Web Design</li>
-                                <li>Web Design Business</li>
-                                <li>Web Standards</li>
-                                <li>Simulating Web text</li>
+                                <li>Updates on features of SKW</li>
+                                <li>Updates on launched regions</li>
+                                <li>Info on how to Use</li>
+                                <li>Get to know more about SKW</li>
+                                <li>Get Support and Help Info</li>
                             </ul>
                         </div>
                     </div>
                     <div class="price-footer">
                         <div class="price-action">
-                            <a class="btn" href="">Order Now</a>
+                            <a class="btn" href="">Check Now</a>
                         </div>
                     </div>
                 </div>
@@ -189,25 +189,25 @@
                             <h2>U-Report SMS</h2>
                         </div>
                         <div class="price-prices">
-                            <h2>Component Available</h2>
+                            <h3>Free SMS Platform</h3>
                         </div>
                     </div>
                     <div class="price-body">
                         <div class="price-description">
                             <ul>
-                                <li>ChatBot</li>
-                                <li>Layout and Composition</li>
-                                <li>Designing logo techniques</li>
-                                <li>Photoshop </li>
-                                <li>Design graphic tips and Tricks</li>
+                                <li>Feel free to Chat</li>
+                                <li>Abusive Language is filtered</li>
+                                <li>Send compliments, views and advise</li>
+                                <li>Your contribution helps a lot to your leader </li>
+                                <li>Citizen security is highly concerned</li>
                             </ul>
                         </div>
                     </div>
-    <!--                <div class="price-footer">-->
-    <!--                    <div class="price-action">-->
-    <!--                        <a class="btn" href="">O</a>-->
-    <!--                    </div>-->
-    <!--                </div>-->
+                   <div class="price-footer">
+                       <div class="price-action">
+                           <a class="btn" href="">Try Now</a>
+                       </div>
+                    </div>
                 </div>
             </div>
             <div class="col-md-4 wow fadeInUp" data-wow-delay="0.1s">
@@ -217,23 +217,23 @@
                             <h2>Leaders Dashboard</h2>
                         </div>
                         <div class="price-prices">
-                            <h2>Printed Products</h2>
+                            <h3>Visualization of Data from SMS</h3>
                         </div>
                     </div>
                     <div class="price-body">
                         <div class="price-description">
                             <ul>
-                                <li>Banners and fliers</li>
-                                <li>Calender and Posters</li>
-                                <li>Business and ID Cards</li>
-                                <li>Reflectors and Product label</li>
-                                <li>Promotion Materials</li>
+                                <li>The leader will receive data on the local area of supervision. </li>
+                                <li>Data are simplified</li>
+                                <li>Leader will own an Account</li>
+                                <li>Graphs for visualization</li>
+                                <li>Real time platform</li>
                             </ul>
                         </div>
                     </div>
                     <div class="price-footer">
                         <div class="price-action">
-                            <a class="btn" href="">Order Now</a>
+                            <a class="btn" href="">Ask for Account</a>
                         </div>
                     </div>
                 </div>
