@@ -15,7 +15,7 @@
     "bootstrap-vue": "npm:@ankurk91/bootstrap-vue@^3.0.2",
     "chart.js": "^4.0.1",
     "vue": "^3.2.41",
-    "vue-chartjs": "^5.vi0.1",
+    "vue-chartjs": "^5.1.0",
     "vue-router": "^4.1.6"
   },
   "devDependencies": {
