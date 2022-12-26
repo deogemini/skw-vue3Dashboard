@@ -279,7 +279,7 @@
         <div class="container">
             <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
                 <p>Our Team</p>
-                <h2>Expert Team Members</h2>
+                <h2>Executive Team Members</h2>
             </div>
             <div class="row">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.0s">
@@ -289,14 +289,14 @@
                         </div>
                         <div class="team-text">
                             <h2>Deogratias Gemini Mushi</h2>
-                            <h4>SKW COO</h4>
+                            <h4>Co-Founder and Chief of Operations</h4>
                             <p>
-                                Active, focused and has ability to meet the customer needs.
+                                Pursuing his vision of building software systems in Tanzania. Deo is graduate of University of Dar es Salaam with BSc in Computer Science.
                             </p>
                             <div class="team-social">
                                 <a class="btn" href="https://twitter.com/tranceTeo"><i class="fab fa-twitter"></i></a>
-                                <a class="btn" href="https://facebook.com/arnold Mashely"><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn" href="https://linkedin.com/arnold Mashely"><i class="fab fa-linkedin-in"></i></a>
+                                <a class="btn" href="https://facebook.com/deogemini"><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn" href="https://linkedin.com/deogemini"><i class="fab fa-linkedin-in"></i></a>
                                 <a class="btn" href="https://github.com/deogemini"><i class="fab fa-github"></i></a>
                             </div>
                         </div>
@@ -309,9 +309,9 @@
                         </div>
                         <div class="team-text">
                             <h2>Laurent Deus</h2>
-                            <h4>SKW CTO</h4>
+                            <h4>Co-founder and CTO</h4>
                             <p>
-                                Timely and product derivery personel with highly quality.
+                          Laurent has mission in building tools and softwares that will simplify our life and make a world better place. Laurent is graduate of University of Dar es Salaam with a Bsc Telecommunications Engineering. 
                             </p>
                             <div class="team-social">
                                 <a class="btn" href=""><i class="fab fa-twitter"></i></a>
@@ -347,16 +347,16 @@
                     </div>
     
                     <div class="footer-social">Follow us
-                        <a href="https://twitter.com/sisilimited"><i class="fab fa-twitter"></i></a>
-                        <a href="https://facebook.com/sisilimited"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com/skw"><i class="fab fa-twitter"></i></a>
+                        <a href="https://facebook.com/skw"><i class="fab fa-facebook-f"></i></a>
                         <a href=""><i class="fab fa-youtube"></i></a>
-                        <a href="https://www.instagram.com/sisicreativetz/"><i class="fab fa-instagram"></i></a>
-                        <a href="https://linkedin.com/sisilimited"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/skw/"><i class="fab fa-instagram"></i></a>
+                        <a href="https://linkedin.com/skw"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
             </div>
             <div class="container copyright">
-                <p>&copy; <a href="#">2022</a>, All Right Reserved  <a href="https://www.sisilimited.co.tz/">Y4C Hub Udsm</a></p>
+                <p>&copy; <a href="#">2022</a>, All Right Reserved  <a href="http://45.56.115.113/">Y4C Hub Udsm</a></p>
             </div>
         </div>
     </div>
