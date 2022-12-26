@@ -17,7 +17,7 @@
                 <a href="#price" class="nav-item nav-link">Features</a>
                 <a href="#team" class="nav-item nav-link">Team</a>               
                 <a href="#contact" class="nav-item nav-link">Contact</a>
-                <a  class="nav-link"> <router-link to="/login"> Login</router-link></a>
+                <router-link to="/login"><a  class="nav-item nav-link"> Login </a></router-link>
 
             </div>
         </div>
