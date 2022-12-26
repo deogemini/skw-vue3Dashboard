@@ -135,14 +135,12 @@
     <div class="banner wow zoomIn" data-wow-delay="0.1s">
         <!-- <div class="container"> -->
         <div class="section-header text-center">
-            <p>Awesome Discount</p>
-            <h2>Get <span>30%</span> Discount</h2>
+            <p>Free SMS and Anonymously</p>
         </div>
         <div class="container banner-text">
             <p>
-                Book and make order of the products we are offering by affordable and less cost price. This goes to all customers who purchase from sisi creatve a limited amount  of time. With this SISI CREATIVE in cooparate with SISI LIMITED will give a discount of 30% of any product you purchase from us. <br> Your Welcome
-            </p>
-            <a class="btn">Order Now</a>
+                Bring your phone. To interact with the conversation flow and liberate yourself as a citizen chat to take part in the growth of your society, send SMS with the word "SKW" to the U-Report number 15070. Your leader will receive content in a simplified fashion to enable him/her know where to focus while serving the community.            </p>
+            <a class="btn">Try Now</a>
         </div>
     </div>
     <!-- Banner End -->
