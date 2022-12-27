@@ -37,6 +37,7 @@ export default {
       axios.get('http://45.56.115.113:8001/api/getfeedback/'+localStorage.getItem('username'))
           .then(response => {
             this.pongezi = response.data
+            localStorage.setItem('maoniAmount', this.pongezi.length )
           })
           .catch(function (error) {
             console.log(error);

@@ -37,6 +37,7 @@ export default {
       axios.get('http://45.56.115.113:8001/api/sectors/')
           .then(response => {
             this.sectors = response.data.sectors
+            localStorage.setItem('sectorAmount', this.sectors.length )
           })
           .catch(function (error) {
             console.log(error);

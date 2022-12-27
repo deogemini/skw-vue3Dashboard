@@ -53,6 +53,7 @@ export default {
     let response = await axios(config)
           console.log(response.data);
           this.majimbo = response.data.majimbo
+          localStorage.setItem('majimboAmount', this.majimbo.length )
     }
   },
   mounted() {

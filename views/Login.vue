@@ -38,7 +38,9 @@ export default {
     axios.post(apiUrl,this.form)
         .then((res)=>{
           this.token = res.data.token
+          this.region = res.data.region
           localStorage.setItem('token', this.token )
+          localStorage.setItem('region', this.region )
           this.$router.push({name: 'Dashboard'})
           localStorage.setItem('username', this.form.username)
         })

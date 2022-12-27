@@ -16,20 +16,6 @@
       </b-col>
     </b-row>
 
-    <b-row>
-      <b-col>
-        <Bar
-            id="my-chart-id"
-            :options="chartOptions"
-            :data="chartData"/>
-      </b-col>
-      <b-col>
-        <Bar
-            id="my-chart-id"
-            :options="chartOptions"
-            :data="chartData"/>
-      </b-col>
-    </b-row>
   </b-container>
 
 
