@@ -109,7 +109,7 @@
                 </div>
                 <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
                     <div class="timeline-text">
-                        <div class="timeline-date"> Jun 2021 - Jul 2022</div>
+                        <div class="timeline-date"> Jun 2021 - Jul 2021</div>
                         <h2>Demo and Initial released</h2>
                         <h4>The Software was presented to the society</h4>
                         <p>
