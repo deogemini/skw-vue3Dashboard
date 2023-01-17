@@ -111,9 +111,9 @@ export default {
             } else if (this.data.majimbo[i].sekta[j].Kosoa) {
               this.kosoa.push(this.data.majimbo[i].sekta[j].Kosoa)
               console.log(this.kosoa)
-            } else {
+            } else if(this.data.majimbo[i].sekta[j].Maoni){
               this.mawazo.push(this.data.majimbo[i].sekta[j].Maoni)
-            }
+            }else{}
           }
         }
       }
