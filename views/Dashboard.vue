@@ -45,6 +45,9 @@
       <b-col>
         <Maji></Maji>
       </b-col>
+      <b-col>
+        <MiundombinuGraph></MiundombinuGraph>
+      </b-col>
     </b-row>
   </b-container>
 
@@ -53,6 +56,7 @@
 
 <script>
 import Maji from "./Maji.vue";
+import MiundombinuGraph from "../components/MiundombinuGraph.vue";
 
 import {Bar, Pie} from 'vue-chartjs'
 import {Chart as ChartJS, Title, ArcElement, Tooltip, Legend, BarElement, CategoryScale, LinearScale} from 'chart.js'
@@ -62,7 +66,7 @@ ChartJS.register(Title, Tooltip, ArcElement, Legend, BarElement, CategoryScale, 
 
 
 export default {
-  components: {Bar, Maji, Pie},
+  components: {Bar, Maji,MiundombinuGraph, Pie},
   data() {
     return {
       region: localStorage.getItem("region"),
