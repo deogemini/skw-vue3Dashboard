@@ -29,15 +29,20 @@ export default {
   name: "Pongezi",
   data() {
     return {
-      pongezi: []
+      pongezi: [],
+      maoniyote:[]
     }
   },
   methods: {
     getPongezi(){
       axios.get('http://45.56.115.113:8001/api/getfeedback/'+localStorage.getItem('username'))
           .then(response => {
-            this.pongezi = response.data
-            localStorage.setItem('maoniAmount', this.pongezi.length )
+            this.maoniyote = response.data
+            this.pongezi = this.maoniyote.filter((object) =>{
+              if(object.category == 1)
+                return object;
+            });
+            localStorage.setItem('maoniAmount', this.maoniyote.length )
           })
           .catch(function (error) {
             console.log(error);

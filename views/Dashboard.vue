@@ -54,6 +54,14 @@
         <ElimuGraph></ElimuGraph>
       </b-col>
       </b-row>
+    <b-row>
+      <b-col></b-col>
+      <b-col></b-col>
+    </b-row>
+    <b-row>
+      <b-col></b-col>
+      <b-col></b-col>
+    </b-row>
   </b-container>
 
 
@@ -141,7 +149,15 @@ export default {
             label: 'Afya Vs Maoni',
             backgroundColor: 'blue',
             data: this.mawazo
-          }]
+          }
+          ],
+        Options:{
+          responsive: true,
+          title: {
+            display: true,
+            text: "SMS for Afya Sectors in Provinces"
+          }
+        }
       }
 
 
