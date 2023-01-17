@@ -14,8 +14,8 @@
       </thead>
       <tbody>
       <tr v-for="(makos, index) in makosa" :key="index">
-        <td v-if="makos.category === '2'" v-text="index+1"> </td>
-        <td v-if="makos.category === '2' " v-text="makos.maoni"></td>
+        <td v-text="index+1"> </td>
+        <td v-text="makos.maoni"></td>
       </tr>
       </tbody>
     </table>
@@ -29,14 +29,21 @@ export default {
   name: "Kosoa",
   data() {
     return {
+      maoniyote:[],
       makosa: []
+
     }
   },
   methods: {
     getMakosa(){
       axios.get('http://45.56.115.113:8001/api/getfeedback/'+localStorage.getItem('username'))
           .then(response => {
-            this.makosa = response.data
+            this.maoniyote = response.data
+            this.makosa = this.maoniyote.filter((object) => {
+              if(object.category == 2){
+                return object;
+              }
+            })
           })
           .catch(function (error) {
             console.log(error);

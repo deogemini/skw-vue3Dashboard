@@ -14,8 +14,8 @@
       </thead>
       <tbody>
       <tr v-for="(oni , index) in maoni" :key="index">
-        <td v-if="oni.category === '3'" v-text="index"> </td>
-        <td v-if="oni.category === '3' " v-text="oni.maoni"></td>
+        <td v-text="index+1"> </td>
+        <td v-text="oni.maoni"></td>
       </tr>
       </tbody>
     </table>
@@ -29,6 +29,7 @@ export default {
   name: "Maoni",
   data() {
     return {
+      maoniyote: [],
       maoni: []
     }
   },
@@ -36,7 +37,11 @@ export default {
     getMaoni(){
       axios.get('http://45.56.115.113:8001/api/getfeedback/'+localStorage.getItem('username'))
           .then(response => {
-            this.maoni = response.data
+            this.maoniyote = response.data
+            this.maoni = this.maoniyote.filter((object) =>{
+              if(object.category == 3)
+                return object;
+            });
           })
           .catch(function (error) {
             console.log(error);

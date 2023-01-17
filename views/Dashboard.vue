@@ -10,8 +10,7 @@
             border-variant="primary"
             header="Sekta"
             header-bg-variant="primary"
-            header-text-variant="white"
-        >
+            header-text-variant="white">
           <b-card-text>Government Sectors registered is {{ sectors }} sectors</b-card-text>
         </b-card>
 
@@ -19,15 +18,16 @@
             align="center"
             border-variant="secondary"
             header="Total Comments"
-            header-border-variant="secondary"
-        >
+            header-bg-variant="warning"
+            header-border-variant="secondary">
           <b-card-text>Amount of Total Comments from citizens collected is {{ maoni }}</b-card-text>
         </b-card>
 
         <b-card
             align="center"
             border-variant="success"
-            header="Provinces">
+            header="Provinces"
+            header-bg-variant="info">
           <b-card-text>Amount of Total Provinces registered is {{ majimbo }}</b-card-text>
         </b-card>
       </b-card-group>
@@ -55,12 +55,28 @@
       </b-col>
       </b-row>
     <b-row>
-      <b-col></b-col>
-      <b-col></b-col>
+      <b-col>
+        <KilimoGraph></KilimoGraph>
+      </b-col>
+      <b-col>
+        <Biashara></Biashara>
+      </b-col>
     </b-row>
     <b-row>
-      <b-col></b-col>
-      <b-col></b-col>
+      <b-col>
+        <Uvuvi></Uvuvi>
+      </b-col>
+      <b-col>
+        <MadiniGraph></MadiniGraph>
+      </b-col>
+    </b-row>
+    <b-row>
+      <b-col>
+        <Mengineyo></Mengineyo>
+      </b-col>
+      <b-col>
+        <Mazingira></Mazingira>
+      </b-col>
     </b-row>
   </b-container>
 
@@ -70,7 +86,13 @@
 <script>
 import Maji from "./Maji.vue";
 import MiundombinuGraph from "../components/MiundombinuGraph.vue";
+import Biashara from "../components/Biashara.vue";
+import KilimoGraph from "../components/KilimoGraph.vue";
 import ElimuGraph from "../components/ElimuGraph.vue";
+import Uvuvi from "../components/Uvuvi.vue";
+import MadiniGraph from "../components/MadiniGraph.vue";
+import Mengineyo from "../components/Mengineyo.vue";
+import Mazingira from "../components/Mazingira.vue";
 
 import {Bar, Pie} from 'vue-chartjs'
 import {Chart as ChartJS, Title, ArcElement, Tooltip, Legend, BarElement, CategoryScale, LinearScale} from 'chart.js'
@@ -80,7 +102,7 @@ ChartJS.register(Title, Tooltip, ArcElement, Legend, BarElement, CategoryScale, 
 
 
 export default {
-  components: {Bar, Maji,MiundombinuGraph, ElimuGraph, Pie},
+  components: {Bar, Maji,MiundombinuGraph, ElimuGraph, Biashara, KilimoGraph, Uvuvi, MadiniGraph, Mengineyo, Mazingira, Pie},
   data() {
     return {
       region: localStorage.getItem("region"),

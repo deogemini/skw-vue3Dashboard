@@ -78,6 +78,7 @@ export default {
 
 
   },
+  name:"miundombinu",
   mounted() {
     this.getReportMiundombinu()
   },

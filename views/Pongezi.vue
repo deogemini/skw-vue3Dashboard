@@ -14,8 +14,8 @@
       </thead>
       <tbody>
       <tr v-for="(ponge, index) in pongezi" :key="index">
-        <td v-if="ponge.category === '1'" v-text="index+1"> </td>
-        <td v-if="ponge.category === '1' " v-text="ponge.maoni"></td>
+        <td v-text="index+1"> </td>
+        <td v-text="ponge.maoni"></td>
       </tr>
       </tbody>
     </table>
@@ -29,8 +29,8 @@ export default {
   name: "Pongezi",
   data() {
     return {
+      maoniyote:[],
       pongezi: [],
-      maoniyote:[]
     }
   },
   methods: {

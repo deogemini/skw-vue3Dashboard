@@ -78,6 +78,7 @@ export default {
 
 
   },
+  name: "elimu",
   mounted() {
     this.getReportElimu()
   },
