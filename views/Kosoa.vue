@@ -10,12 +10,16 @@
           ID <i class="bi bi-sort-alpha-down" aria-label='Sort Icon'></i>
         </th>
         <th>Malalamiko Husika<i class="bi bi-sort-alpha-down" aria-label='Sort Icon'></i></th>
+        <th>Sekta Husika<i class="bi bi-sort-alpha-down" aria-label='Sort Icon'></i></th>
+        <th>Jimbo Husika<i class="bi bi-sort-alpha-down" aria-label='Sort Icon'></i></th>
       </tr>
       </thead>
       <tbody>
       <tr v-for="(makos, index) in makosa" :key="index">
         <td v-text="index+1"> </td>
         <td v-text="makos.maoni"></td>
+        <td v-text="makos.sekta"></td>
+        <td v-text="makos.jimbo"></td>
       </tr>
       </tbody>
     </table>
@@ -35,23 +39,21 @@ export default {
     }
   },
   methods: {
-    getMakosa(){
-      axios.get('http://45.56.115.113:8001/api/getfeedback/'+localStorage.getItem('username'))
-          .then(response => {
-            this.maoniyote = response.data
-            this.makosa = this.maoniyote.filter((object) => {
-              if(object.category == 2){
-                return object;
-              }
-            })
-          })
-          .catch(function (error) {
-            console.log(error);
-          })
-          .then(function () {
-            // always executed
-          });
+    async getMakosa(){
+      const config = {
+        method: 'get',
+        url: 'http://45.56.115.113:8001/api/getfeedback/',
+        headers: {
+          Authorization: `Token ` + localStorage.getItem('token')
 
+        }
+      }
+      let response = await axios(config)
+      this.maoniyote = response.data.result;
+      this.makosa = this.maoniyote.filter((object) => {
+        if(object.feedback_type == "Kosoa")
+          return object;
+      });
     }
   },
   mounted() {

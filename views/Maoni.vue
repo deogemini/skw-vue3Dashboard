@@ -10,12 +10,16 @@
           ID <i class="bi bi-sort-alpha-down" aria-label='Sort Icon'></i>
         </th>
         <th>Maoni Husika<i class="bi bi-sort-alpha-down" aria-label='Sort Icon'></i></th>
+        <th>Sekta Husika<i class="bi bi-sort-alpha-down" aria-label='Sort Icon'></i></th>
+        <th>Jimbo Husika<i class="bi bi-sort-alpha-down" aria-label='Sort Icon'></i></th>
       </tr>
       </thead>
       <tbody>
-      <tr v-for="(oni , index) in maoni" :key="index">
+      <tr v-for="(oni , index) in views" :key="index">
         <td v-text="index+1"> </td>
         <td v-text="oni.maoni"></td>
+        <td v-text="oni.sekta"></td>
+        <td v-text="oni.jimbo"></td>
       </tr>
       </tbody>
     </table>
@@ -30,26 +34,25 @@ export default {
   data() {
     return {
       maoniyote: [],
-      maoni: []
+      views: []
     }
   },
   methods: {
-    getMaoni(){
-      axios.get('http://45.56.115.113:8001/api/getfeedback/'+localStorage.getItem('username'))
-          .then(response => {
-            this.maoniyote = response.data
-            this.maoni = this.maoniyote.filter((object) =>{
-              if(object.category == 3)
-                return object;
-            });
-          })
-          .catch(function (error) {
-            console.log(error);
-          })
-          .then(function () {
-            // always executed
-          });
+    async getMaoni(){
+      const config = {
+        method: 'get',
+        url: 'http://45.56.115.113:8001/api/getfeedback/',
+        headers: {
+          Authorization: `Token ` + localStorage.getItem('token')
 
+        }
+      }
+      let response = await axios(config)
+      this.maoniyote = response.data.result;
+      this.views = this.maoniyote.filter((object) => {
+        if(object.feedback_type == "Maoni")
+          return object;
+      });
     }
   },
   mounted() {

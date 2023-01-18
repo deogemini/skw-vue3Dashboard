@@ -10,12 +10,17 @@
           ID <i class="bi bi-sort-alpha-down" aria-label='Sort Icon'></i>
         </th>
         <th>Pongezi Husika<i class="bi bi-sort-alpha-down" aria-label='Sort Icon'></i></th>
+        <th>Sekta Husika<i class="bi bi-sort-alpha-down" aria-label='Sort Icon'></i></th>
+        <th>Jimbo Husika<i class="bi bi-sort-alpha-down" aria-label='Sort Icon'></i></th>
+
       </tr>
       </thead>
       <tbody>
       <tr v-for="(ponge, index) in pongezi" :key="index">
         <td v-text="index+1"> </td>
         <td v-text="ponge.maoni"></td>
+        <td v-text="ponge.sekta"></td>
+        <td v-text="ponge.jimbo"></td>
       </tr>
       </tbody>
     </table>
@@ -23,7 +28,7 @@
 </template>
 
 <script>
-import axios from "axios";
+import axios, {Axios} from "axios";
 
 export default {
   name: "Pongezi",
@@ -34,23 +39,24 @@ export default {
     }
   },
   methods: {
-    getPongezi(){
-      axios.get('http://45.56.115.113:8001/api/getfeedback/'+localStorage.getItem('username'))
-          .then(response => {
-            this.maoniyote = response.data
-            this.pongezi = this.maoniyote.filter((object) =>{
-              if(object.category == 1)
-                return object;
-            });
-            localStorage.setItem('maoniAmount', this.maoniyote.length )
-          })
-          .catch(function (error) {
-            console.log(error);
-          })
-          .then(function () {
-            // always executed
-          });
+      async getPongezi(){
+       const config = {
+         method: 'get',
+         url: 'http://45.56.115.113:8001/api/getfeedback/',
+         headers: {
+           Authorization: `Token ` + localStorage.getItem('token')
 
+         }
+       }
+       let response = await axios(config)
+        this.maoniyote = response.data.result;
+       console.log(this.maoniyote.length)
+        localStorage.setItem('maoniAmount', this.maoniyote.length )
+        this.pongezi = this.maoniyote.filter((object) => {
+          if(object.feedback_type == "Pongezi")
+            return object;
+        });
+       console.log(this.pongezi)
     }
   },
   mounted() {
