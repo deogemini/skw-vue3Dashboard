@@ -1,5 +1,9 @@
 <template>
-  <Bar v-if="loaded" :data="chartDataElimu"/>
+  <b-card
+      class="mb-3"
+      border-variant="primary">
+    <Bar v-if="loaded" :data="chartDataElimu"/>
+  </b-card>
 </template>
 
 <script>

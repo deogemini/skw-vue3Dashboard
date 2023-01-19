@@ -1,70 +1,81 @@
 <template>
-  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
-    <h1 class="h2">Pongezi</h1>
-  </div>
-  <div class="table-responsive">
-    <table id="tableComponent" class="table table-bordered table-striped table-sm">
-      <thead>
-      <tr>
-        <th>
-          ID <i class="bi bi-sort-alpha-down" aria-label='Sort Icon'></i>
-        </th>
-        <th>Pongezi Husika<i class="bi bi-sort-alpha-down" aria-label='Sort Icon'></i></th>
-        <th>Sekta Husika<i class="bi bi-sort-alpha-down" aria-label='Sort Icon'></i></th>
-        <th>Jimbo Husika<i class="bi bi-sort-alpha-down" aria-label='Sort Icon'></i></th>
+  <div>
+    <b-card  class="mb-3">
+      <b-card-header>
+        <b-card-title class="text-center">SMS za Pongezi </b-card-title>
+      </b-card-header>
+      <b-card-text>Jumbe za kupongeza jitihada za serikali kutoka kwa wananchi wa mkoa wako</b-card-text>
+      <b-table
+          head-variant="light"
+          bordered
+          striped hover
+          :items="items" :fields="fields" outlined>
+        <template v-slot:cell(serialNumber)="data">
+          {{ data.index + 1 }}
+        </template>
+      </b-table>
+    </b-card>
 
-      </tr>
-      </thead>
-      <tbody>
-      <tr v-for="(ponge, index) in pongezi" :key="index">
-        <td v-text="index+1"> </td>
-        <td v-text="ponge.maoni"></td>
-        <td v-text="ponge.sekta"></td>
-        <td v-text="ponge.jimbo"></td>
-      </tr>
-      </tbody>
-    </table>
   </div>
 </template>
 
 <script>
-import axios, {Axios} from "axios";
+import { BTable } from 'bootstrap-vue'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+import axios from 'axios'
+
 
 export default {
-  name: "Pongezi",
+  components: {
+    BTable
+  },
   data() {
     return {
+      items: [],
       maoniyote:[],
-      pongezi: [],
+      fields: [
+        { key: 'serialNumber',
+          label: '#',
+        },
+        { key: 'maoni',
+          label: 'Pongezi',
+          sortable: true
+        },
+        { key: 'sekta',
+          label: 'Sekta',
+          sortable: true
+        },
+        { key: 'jimbo',
+          label: 'Jimbo',
+          sortable: true
+        }
+      ]
     }
   },
   methods: {
-      async getPongezi(){
-       const config = {
-         method: 'get',
-         url: 'http://45.56.115.113:8001/api/getfeedback/',
-         headers: {
-           Authorization: `Token ` + localStorage.getItem('token')
+    async getPongezi(){
+             const config = {
+               method: 'get',
+            url: 'http://45.56.115.113:8001/api/getfeedback/',
+               headers: {
+                 Authorization: `Token ` + localStorage.getItem('token')
 
-         }
-       }
-       let response = await axios(config)
-        this.maoniyote = response.data.result;
-       console.log(this.maoniyote.length)
-        localStorage.setItem('maoniAmount', this.maoniyote.length )
-        this.pongezi = this.maoniyote.filter((object) => {
-          if(object.feedback_type == "Pongezi")
-            return object;
-        });
-       console.log(this.pongezi)
-    }
+               }
+             }
+             let response = await axios(config)
+              this.maoniyote = response.data.result;
+              localStorage.setItem('maoniAmount', this.maoniyote.length )
+              this.items = this.maoniyote.filter((object) => {
+                if(object.feedback_type == "Pongezi")
+                  return object;
+              });
+             console.log(this.pongezi)
+
+  },
   },
   mounted() {
-    this.getPongezi();
-  }
+      this.getPongezi()
+}
 }
 </script>
-
-<style scoped>
-
-</style>

@@ -1,5 +1,8 @@
 <template>
-  <Bar v-if="loaded" :data="chartDataMiundombinu"/>
+  <b-card class="mb-3"
+          border-variant="primary">
+    <Bar v-if="loaded" :data="chartDataMiundombinu"/>
+  </b-card>
 </template>
 
 <script>

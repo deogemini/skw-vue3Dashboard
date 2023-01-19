@@ -1,5 +1,8 @@
 <template>
-  <Bar v-if="loaded" :data="chartDataBiashara"/>
+  <b-card class="mb-3"
+          border-variant="primary">
+    <Bar v-if="loaded" :data="chartDataBiashara"/>
+  </b-card>
 </template>
 
 <script>
