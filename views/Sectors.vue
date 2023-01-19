@@ -9,7 +9,7 @@
         <th>
           ID <i class="bi bi-sort-alpha-down" aria-label='Sort Icon'></i>
         </th>
-        <th>Jina la Sekto <i class="bi bi-sort-alpha-down" aria-label='Sort Icon'></i></th>
+        <th>Jina la Sekta <i class="bi bi-sort-alpha-down" aria-label='Sort Icon'></i></th>
       </tr>
       </thead>
       <tbody>

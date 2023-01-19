@@ -279,7 +279,7 @@
                             <h2>Laurent Deus</h2>
                             <h4>Co-founder and CTO</h4>
                             <p>
-                          Laurent has mission in building tools and softwares that will simplify our life and make a world better place. Laurent is graduate of University of Dar es Salaam with a Bsc Telecommunications Engineering. 
+                          Laurent has mission in building tools and softwares that will simplify our life and make a world better place. Laurent is graduate of University of Dar es Salaam with a Bsc in Computer Engineering and Information Technology.
                             </p>
                             <div class="team-social">
                                 <a class="btn" href=""><i class="fab fa-twitter"></i></a>
