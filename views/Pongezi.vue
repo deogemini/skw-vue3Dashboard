@@ -5,6 +5,7 @@
         <b-card-title class="text-center">SMS za Pongezi </b-card-title>
       </b-card-header>
       <b-card-text>Jumbe za kupongeza jitihada za serikali kutoka kwa wananchi wa mkoa wako</b-card-text>
+      <b-spinner v-if="loading" variant="primary" label="Loading..."></b-spinner>
       <b-table
           head-variant="light"
           bordered
@@ -32,6 +33,7 @@ export default {
   },
   data() {
     return {
+      loading: true,
       items: [],
       maoniyote:[],
       fields: [
@@ -55,7 +57,8 @@ export default {
   },
   methods: {
     async getPongezi(){
-             const config = {
+      this.loading = true;
+      const config = {
                method: 'get',
             url: 'http://45.56.115.113:8001/api/getfeedback/',
                headers: {
@@ -70,12 +73,14 @@ export default {
                 if(object.feedback_type == "Pongezi")
                   return object;
               });
-             console.log(this.pongezi)
+      this.loading = false;
+
+      console.log(this.pongezi)
 
   },
   },
   mounted() {
-      this.getPongezi()
+    this.getPongezi()
 }
 }
 </script>

@@ -1,47 +1,56 @@
 <template>
-  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
-    <h1 class="h2">MAJIMBO YA MKOA</h1>
-  </div>
-  <div class="table-responsive">
-    <table id="tableComponent" class="table table-bordered table-striped table-sm">
-      <thead>
-      <tr>
-        <th>
-          ID <i class="bi bi-sort-alpha-down" aria-label='Sort Icon'></i>
-        </th>
-        <th>Jina la Jimbo <i class="bi bi-sort-alpha-down" aria-label='Sort Icon'></i></th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr v-for="(majimb, index) in majimbo" :key="index">
-        <td > {{index+1}}</td>
-        <td v-text="majimb.jina_la_jimbo"></td>
-      </tr>
-      </tbody>
-    </table>
+<div>
+  <b-card  class="mb-3">
+    <b-card-header>
+      <b-card-title class="text-center">Majimbo ya Mkoa</b-card-title>
+    </b-card-header>
+    <b-card-text>Majimbo ya uchaguzi yaliyosajiliwa kwenye mfumo wa SKW</b-card-text>
+    <b-spinner v-if="loading" variant="primary" label="Loading..."></b-spinner>
+    <b-table
+        head-variant="light"
+        bordered
+        striped hover
+        :items="items" :fields="fields" outlined>
+      <template v-slot:cell(serialNumber)="data">
+        {{ data.index + 1 }}
+      </template>
+    </b-table>
+  </b-card>
+
   </div>
 </template>
 
 <script>
-import axios, {AxiosHeaders} from "axios";
-
-let mkoa = 'Songwe';
-
-const configuration = {
-  headers:{
-    Authorization: `Token 7b38a209b2c74ee86b6656a2596a8d53e53b8f18`
-  }
-};
+import { BTable } from 'bootstrap-vue'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+import axios from 'axios'
 
 export default {
+  components: {
+    BTable
+  },
   name: "Majimbo",
   data() {
     return {
-      majimbo: []
+      loading: true,
+      items: [],
+      maoniyote:[],
+      fields: [
+        { key: 'serialNumber',
+          label: '#',
+        },
+        { key: 'jina_la_jimbo',
+          label: 'Jina la Jimbo',
+          sortable: true
+        },
+
+      ]
     }
   },
   methods: {
   async  getMajimbokwenyeMkoa(){
+    this.loading = true;
     const config = {
       method: 'get',
       url: 'http://45.56.115.113:8001/api/provincies',
@@ -52,9 +61,10 @@ export default {
     }
     let response = await axios(config)
           console.log(response.data);
-          this.majimbo = response.data.majimbo
-          localStorage.setItem('majimboAmount', this.majimbo.length )
-    }
+          this.items = response.data.majimbo
+          localStorage.setItem('majimboAmount', this.items.length )
+    this.loading= false;
+  }
   },
   mounted() {
     this.getMajimbokwenyeMkoa();

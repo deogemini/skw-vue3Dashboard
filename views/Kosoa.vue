@@ -1,45 +1,63 @@
 <template>
-  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
-    <h1 class="h2">Wananchi Walivyo Kosoa</h1>
-  </div>
-  <div class="table-responsive">
-    <table id="tableComponent" class="table table-bordered table-striped table-sm">
-      <thead>
-      <tr>
-        <th>
-          ID <i class="bi bi-sort-alpha-down" aria-label='Sort Icon'></i>
-        </th>
-        <th>Malalamiko Husika<i class="bi bi-sort-alpha-down" aria-label='Sort Icon'></i></th>
-        <th>Sekta Husika<i class="bi bi-sort-alpha-down" aria-label='Sort Icon'></i></th>
-        <th>Jimbo Husika<i class="bi bi-sort-alpha-down" aria-label='Sort Icon'></i></th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr v-for="(makos, index) in makosa" :key="index">
-        <td v-text="index+1"> </td>
-        <td v-text="makos.maoni"></td>
-        <td v-text="makos.sekta"></td>
-        <td v-text="makos.jimbo"></td>
-      </tr>
-      </tbody>
-    </table>
+  <div>
+    <b-card  class="mb-3">
+      <b-card-header>
+        <b-card-title class="text-center">SMS za Kukosoa </b-card-title>
+      </b-card-header>
+      <b-card-text>Jumbe za kuikosoa serikali kutoka kwa wananchi wa mkoa wako</b-card-text>
+      <b-spinner v-if="loading" variant="primary" label="Loading..."></b-spinner>
+      <b-table
+          head-variant="light"
+          bordered
+          striped hover
+          :items="items" :fields="fields" outlined>
+        <template v-slot:cell(serialNumber)="data">
+          {{ data.index + 1 }}
+        </template>
+      </b-table>
+    </b-card>
+
   </div>
 </template>
 
 <script>
-import axios from "axios";
+import { BTable } from 'bootstrap-vue'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+import axios from 'axios'
+
 
 export default {
-  name: "Kosoa",
+  components: {
+    BTable
+  },
   data() {
     return {
+      loading: true,
+      items: [],
       maoniyote:[],
-      makosa: []
-
+      fields: [
+        { key: 'serialNumber',
+          label: '#',
+        },
+        { key: 'maoni',
+          label: 'Kukosoa',
+          sortable: true
+        },
+        { key: 'sekta',
+          label: 'Sekta',
+          sortable: true
+        },
+        { key: 'jimbo',
+          label: 'Jimbo',
+          sortable: true
+        }
+      ]
     }
   },
   methods: {
-    async getMakosa(){
+    async getPongezi(){
+      this.loading = true;
       const config = {
         method: 'get',
         url: 'http://45.56.115.113:8001/api/getfeedback/',
@@ -50,18 +68,18 @@ export default {
       }
       let response = await axios(config)
       this.maoniyote = response.data.result;
-      this.makosa = this.maoniyote.filter((object) => {
+      localStorage.setItem('maoniAmount', this.maoniyote.length )
+      this.items = this.maoniyote.filter((object) => {
         if(object.feedback_type == "Kosoa")
           return object;
       });
-    }
+      this.loading= false;
+      console.log(this.pongezi)
+
+    },
   },
   mounted() {
-    this.getMakosa();
+    this.getPongezi()
   }
 }
 </script>
-
-<style scoped>
-
-</style>
