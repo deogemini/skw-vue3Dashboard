@@ -1,43 +1,57 @@
 <template>
-  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
-    <h1 class="h2">Sekta Mbalimbali</h1>
-  </div>
-  <div class="table-responsive">
-    <table id="tableComponent" class="table table-bordered table-striped table-sm">
-      <thead>
-      <tr>
-        <th>
-          ID <i class="bi bi-sort-alpha-down" aria-label='Sort Icon'></i>
-        </th>
-        <th>Jina la Sekta <i class="bi bi-sort-alpha-down" aria-label='Sort Icon'></i></th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr v-for="(sekta, index) in sectors" :key="index">
-        <td v-text="sekta.id"> </td>
-        <td v-text="sekta.jina"></td>
-      </tr>
-      </tbody>
-    </table>
+  <div>
+    <b-card class="mb-3">
+      <b-card-header>
+        <b-card-title class="text-center">Sekta Mbalimbali</b-card-title>
+      </b-card-header>
+      <b-card-text>Sekta za huduma za kijamii zilizosajiliwa kwenye mfumo wa SKW</b-card-text>
+      <b-spinner v-if="loading" variant="primary" label="Loading..."></b-spinner>
+      <b-table
+          head-variant="light"
+          bordered
+          striped hover
+          :items="items" :fields="fields" outlined>
+        <template v-slot:cell(serialNumber)="data">
+          {{ data.index + 1 }}
+        </template>
+      </b-table>
+
+    </b-card>
   </div>
 </template>
 
 <script>
-import axios from "axios";
+import { BTable } from 'bootstrap-vue'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+import axios from 'axios'
 
 export default {
   name: "Sectors",
+  components: {
+    BTable
+  },
   data() {
     return {
-      sectors: []
+      loading: true,
+      items: [],
+      fields: [
+        { key: 'serialNumber',
+          label: '#',
+        },
+        { key: 'jina',
+          label: 'Jina la Sekta',
+          sortable: true
+        },
+          ]
     }
   },
   methods: {
     getSectors(){
       axios.get('http://45.56.115.113:8001/api/sectors/')
           .then(response => {
-            this.sectors = response.data.sectors
-            localStorage.setItem('sectorAmount', this.sectors.length )
+            this.items = response.data.sectors
+            localStorage.setItem('sectorAmount', this.items.length )
           })
           .catch(function (error) {
             console.log(error);
@@ -45,7 +59,7 @@ export default {
           .then(function () {
             // always executed
           });
-
+      this.loading= false;
     }
   },
   mounted() {
