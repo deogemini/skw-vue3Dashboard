@@ -119,130 +119,133 @@ export default {
     Pie
   },
   computed: {
-    myStyles () {
+    myStyles() {
       return {
         responsive: true,
         position: 'relative'
       }
     }
   },
-    data() {
-      return {
-        region: localStorage.getItem("region"),
-        sectors: localStorage.getItem("sectorAmount"),
-        maoni: localStorage.getItem("maoniAmount"),
-        majimbo: localStorage.getItem("majimboAmount"),
-        loaded: false,
-        data: null,
-        pongezi: [],
-        kosoa: [],
-        mawazo: [],
-        options: null,
-        dataLabels: [],
-        chartData: null,
-        totalPongezi: null,
-        totalKosoa: null,
-        totalMaoni: null,
-        //piedata: null
-      }
-    },
-    methods: {
-      async getReport() {
-        this.loaded = false
-        const config = {
-          method: 'get',
-          url: 'http://45.56.115.113:8001/api/summary',
-          headers:
-              {
-                Authorization: `Token ` + localStorage.getItem('token')
-              }
-        }
-        let response = await axios(config)
-        this.data = response.data;
-
-        for (let i = 0; i < this.data.majimbo.length; i++) {
-          this.dataLabels.push(this.data.majimbo[i].name)
-          // this.totalPongezi = this.data.majimbo[i].Pongezi_Total
-          // this.totalKosoa = this.data.majimbo[i].Kosoa_Total
-          // this.totalMaoni = this.data.majimbo[i].Maoni_Total
-        }
-        for (let i = 0; i < this.data.majimbo.length; i++) {
-          for (let j = 0; j < this.data.majimbo[i].sekta.length; j++) {
-            if (this.data.majimbo[i].sekta[j].name == "Afya") {
-              this.pongezi.push(this.data.majimbo[i].sekta[j].Pongezi)
-              this.kosoa.push(this.data.majimbo[i].sekta[j].Kosoa)
-              this.mawazo.push(this.data.majimbo[i].sekta[j].Maoni)
+  data() {
+    return {
+      region: localStorage.getItem("region"),
+      sectors: localStorage.getItem("sectorAmount"),
+      maoni: localStorage.getItem("maoniAmount"),
+      majimbo: localStorage.getItem("majimboAmount"),
+      loaded: false,
+      data: null,
+      pongezi: [],
+      kosoa: [],
+      mawazo: [],
+      options: null,
+      dataLabels: [],
+      chartData: null,
+      totalPongezi: null,
+      totalKosoa: null,
+      totalMaoni: null,
+      //piedata: null
+    }
+  },
+  methods: {
+    async getReport() {
+      this.loaded = false
+      const config = {
+        method: 'get',
+        url: 'http://45.56.115.113:8001/api/summary',
+        headers:
+            {
+              Authorization: `Token ` + localStorage.getItem('token')
             }
+      }
+      let response = await axios(config)
+      this.data = response.data;
+
+      for (let i = 0; i < this.data.majimbo.length; i++) {
+        this.dataLabels.push(this.data.majimbo[i].name)
+        // this.totalPongezi = this.data.majimbo[i].Pongezi_Total
+        // this.totalKosoa = this.data.majimbo[i].Kosoa_Total
+        // this.totalMaoni = this.data.majimbo[i].Maoni_Total
+      }
+      for (let i = 0; i < this.data.majimbo.length; i++) {
+        for (let j = 0; j < this.data.majimbo[i].sekta.length; j++) {
+          if (this.data.majimbo[i].sekta[j].name == "Afya") {
+            this.pongezi.push(this.data.majimbo[i].sekta[j].Pongezi)
+            this.kosoa.push(this.data.majimbo[i].sekta[j].Kosoa)
+            this.mawazo.push(this.data.majimbo[i].sekta[j].Maoni)
           }
         }
-
-
-        this.loaded = true
-        this.chartData = {
-          labels: this.dataLabels,
-          // labels: ['chunya', 'ileje', 'mbezi'],
-          datasets: [
-            {
-              label: 'Afya Vs Pongezi',
-              backgroundColor: '#f87979',
-              data: this.pongezi
-            }, {
-              label: 'Afya Vs Kosoa',
-              backgroundColor: 'red',
-              data: this.kosoa
-            },
-            {
-              label: 'Afya Vs Maoni',
-              backgroundColor: 'blue',
-              data: this.mawazo
-            }
-          ],
-
-          // options: {
-          //   responsive: true,
-          //   title: {
-          //     display: true,
-          //     text: "SMS for Afya Sectors in Provinces"
-          //   },
-          //   scales: {
-          //     xAxes: [
-          //       {
-          //         display: true,
-          //         scaleLabel: {
-          //           display: true,
-          //           labelString: "Majimbo"
-          //         }
-          //       }
-          //     ],
-          //     yAxes: [{
-          //       display: true,
-          //       scaleLabel: {
-          //         display: true,
-          //         labelString: "SMS"
-          //       }
-          //     }]
-          //   }
-          // }
-        }
-        //pie chart ya data za jumla za region
-        // this.piedata = {
-        //   labels: ['Pongezi', 'Kosoa', 'Maoni'],
-        //   datasets: [
-        //     {
-        //       backgroundColor: ['#41B883', '#E46651', '#00D8FF'],
-        //       data: [this.totalPongezi, this.totalKosoa, this.totalMaoni]
-        //     }
-        //   ]
-        // }
       }
 
 
-    },
-    name: "dashboard",
-    mounted() {
-      this.getReport()
-    },
-  }
+      this.loaded = true
+      this.chartData = {
+        labels: this.dataLabels,
+        // labels: ['chunya', 'ileje', 'mbezi'],
+        datasets: [
+          {
+            label: 'Afya Vs Pongezi',
+            backgroundColor: '#f87979',
+            data: this.pongezi
+          }, {
+            label: 'Afya Vs Kosoa',
+            backgroundColor: 'red',
+            data: this.kosoa
+          },
+          {
+            label: 'Afya Vs Maoni',
+            backgroundColor: 'blue',
+            data: this.mawazo
+          }
+        ],
+
+        // options: {
+        //   responsive: true,
+        //   title: {
+        //     display: true,
+        //     text: "SMS for Afya Sectors in Provinces"
+        //   },
+        //   scales: {
+        //     xAxes: [
+        //       {
+        //         display: true,
+        //         scaleLabel: {
+        //           display: true,
+        //           labelString: "Majimbo"
+        //         }
+        //       }
+        //     ],
+        //     yAxes: [{
+        //       display: true,
+        //       scaleLabel: {
+        //         display: true,
+        //         labelString: "SMS"
+        //       }
+        //     }]
+        //   }
+        // }
+      }
+      //pie chart ya data za jumla za region
+      // this.piedata = {
+      //   labels: ['Pongezi', 'Kosoa', 'Maoni'],
+      //   datasets: [
+      //     {
+      //       backgroundColor: ['#41B883', '#E46651', '#00D8FF'],
+      //       data: [this.totalPongezi, this.totalKosoa, this.totalMaoni]
+      //     }
+      //   ]
+      // }
+    }
+
+
+  },
+  name: "dashboard",
+  mounted() {
+    this.getReport()
+  },
+
+}
+
+
 </script>
 
 <style>
