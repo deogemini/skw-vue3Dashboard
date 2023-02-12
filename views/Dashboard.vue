@@ -197,7 +197,6 @@ export default {
             data: this.mawazo
           }
         ],
-
         // options: {
         //   responsive: true,
         //   title: {
@@ -222,7 +221,7 @@ export default {
         //       }
         //     }]
         //   }
-        // }
+        //}
       }
       //pie chart ya data za jumla za region
       // this.piedata = {

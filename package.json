@@ -11,12 +11,14 @@
   "dependencies": {
     "@vitejs/plugin-vue": "^3.1.2",
     "@vue/compat": "^3.2.41",
+    "apexcharts": "^3.36.3",
     "axios": "^1.2.0",
     "bootstrap-vue": "npm:@ankurk91/bootstrap-vue@^3.0.2",
     "chart.js": "^4.1.2",
     "vue": "^3.2.41",
     "vue-chartjs": "^5.2.0",
-    "vue-router": "^4.1.6"
+    "vue-router": "^4.1.6",
+    "vue3-apexcharts": "^1.4.1"
   },
   "devDependencies": {
     "sass": "^1.55.0",
