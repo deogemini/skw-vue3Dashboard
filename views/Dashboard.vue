@@ -60,7 +60,7 @@
     <b-row>
       <b-col class="mb-3">
         <KilimoGraph></KilimoGraph>
-      </b-col>
+      </b-col> 
       <b-col class="mb-3">
         <Biashara></Biashara>
       </b-col>
