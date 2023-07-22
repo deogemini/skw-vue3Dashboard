@@ -18,7 +18,7 @@
 
 <script>
 import axios from 'axios';
-const apiUrl = "http://45.56.115.113:8001/api-token-auth/";
+const apiUrl = "http://127.0.0.1:8000/api-token-auth/";
 export default {
   name: "Login",
   data(){

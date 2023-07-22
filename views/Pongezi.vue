@@ -60,7 +60,7 @@ export default {
       this.loading = true;
       const config = {
                method: 'get',
-            url: 'http://45.56.115.113:8001/api/getfeedback/',
+            url: 'http://127.0.0.1:8000/api/getfeedback/',
                headers: {
                  Authorization: `Token ` + localStorage.getItem('token')
 

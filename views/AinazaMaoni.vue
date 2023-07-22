@@ -67,7 +67,7 @@ export default {
   name: "AinazaMaoni",
   methods: {
     getAinazaMaoni(){
-      axios.get("http://45.56.115.113:8001/api/sectors/")
+      axios.get("http://127.0.0.1:8000/api/sectors/")
           .then(response => {
             console.log(response.data);
           });
